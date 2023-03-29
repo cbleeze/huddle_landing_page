@@ -54,135 +54,142 @@
   }
 
   body{
+    min-height: 100vh;
     background-color: var(--Violet);
     background-image: url(images/bg-desktop.svg);
     background-repeat: no-repeat;
-   background-size: cover;
-   display: flex;
-   align-items: center;
-   height: 100vh;
-    
+    background-size: cover;
   }
 
-  header{
-    margin: 4em;
-    margin-bottom: 6em;
-  }
+.container{
+  max-width: 1320px;
+  margin: 0 auto;
+  height: 100vh;
+}
 
-  section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 4em;  
-  }
+.wrapper{
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0;
+  margin: 0 2rem;
+}
 
-  .image{
-    margin-left: 3em;
-  }
+.header img{
+  width: 190px;
+  padding-bottom: 20px;
+}
 
-  .content{
-    margin-right: 19em;
-    padding-top: 3rem;
-  }
+.main{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 
-  h1{
-    font-size: 50px;
-    font-family: var(--ff-heading-400-600);
-    font-weight: 600;
-    color: white;
-  }
+.hero-text h1{
+  color:#fff;
+  font-family: var(--ff-heading-400-600);
+  margin-bottom: 20px;
+}
 
-  p{
-   font-size: 23px;
-   font-family: var(--ff-body400);
-   font-weight: 400;
-   color: whitesmoke;
-  }
+.hero-text p{
+  font-family: var(--ff-body400);
+  color: #fff;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
 
-  footer{
-display: flex;
-justify-content:flex-end;
-margin-right: 10em;
-margin-left: 10em;
-  }
 
-  ul{
-    display: flex;
-    justify-content: space-between;
-    gap: 50%;
-    list-style: none;
-  }
-
- li{
-    list-style: none;
-    color: #fff;
-    margin: 10px -12px;
-    padding: 20px 20px;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    font-size: 20px;
-    transition: .5s;
-
-  }
-
-  li:hover{
-    color: var(--Soft-Magenta);
-    border: 1px solid hsl(300, 69%, 71%);
-    transition: .5s;
-  }
-  
-
-  button{
-    cursor: pointer;
-    text-decoration: none;
-    border: 0;
-    border-radius: 2rem;
-    padding: 0.7em 5em;
-    background-color: #fff;
-    color: var(--Violet);
-    font-size: 0.925rem;
-    font-weight: 400;
-    margin: 30px 0;
-    font-family: var(--ff-heading-400-600);
-  }
+button{
+  display: inline-block;
+  font-family: var(--ff-heading-400-600);
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #fff;
+  color: var(--Violet);
+  padding: 13px 50px;
+border-radius: 25px;
+box-shadow: 0 8px 17px -8px rgba(0. 0. 0. .8);
+transition: all .3s ease;
+}
+ 
 
   button:is(:hover, :focus){
     background-color: var(--Soft-Magenta);
-    transition: background-color .3s ease;
+    color:var(--Violet);
+    
     }
 
-
-    @media only screen and (max-width:1604px){
-      .image img{
-        width: 100%;
-      }
+    .social{
+      text-align: right;
+      margin-top: 20em;
+     
     }
 
-    @media only screen and (max-width:1604px){
-      body{
-        flex-direction: column;
-          flex-direction: column;
-          margin: -34px 55px 3px 6px;
-          background-image: url(images/bg-mobile.svg);
-          background-repeat: no-repeat;
-          background-size: cover;
-      }
-
-      .content{
-        padding: 2em;
-      }
-
+    .social a i{
+      font-size: 18px;
+       position: relative;
+      color: #fff;
+      transition: all .3s ease;
+     
     }
+
+    .social a:not(:first-child){
+      margin-left: 2rem;
+      
+    }
+
+   
+    .social a i::after{
+      content: '';
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      left: -12px;
+      bottom: -11px;
+      transform: all .3s ease;
+    }
+
+    .social a :nth-child(2){
+      margin-left: 2.4rem;
+    }
+
+    .social a i:hover{
+      color: var(--Soft-Magenta);
+    }
+
+    .social a i:hover::after{
+      border-color: var(--Soft-Magenta);
+      
+    }
+
+    @media only screen and (max-width:1440px){
+     .hero-tag img{
+      width: 100%;
+     }
+    }
+
+    @media only screen and (max-width:768px){
+      .main{
+       flex-direction: column;
+       text-align: center;
+      }
+
+      .hero-text h1{
+        font-size: 2em;
+      }
+
+      .social{
+        text-align: center;
+        margin-top: 3rem;
+      }
+     }
+ 
 
     
-    @media only screen and (max-width:1604px){
-      section{
-      grid-template-columns: 1fr;
-      margin: 0 auto;
-      }
-    }
-
        
    
 
